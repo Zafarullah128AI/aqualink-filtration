@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AquaLink Filtration — Order Drinking Water Online in Karachi</title>
+<meta name="description" content="AquaLink Filtration: one website, all local water suppliers in Karachi. Compare prices, order 19-litre bottles in 2 minutes, track delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top">💧 AquaLink <span>Filtration</span></a>
+    <nav>
+      <a href="#suppliers">Suppliers</a>
+      <a href="#plans">Plans</a>
+      <a href="#how">How it works</a>
+      <a href="#orders">My orders <span class="pill" id="orderCount">0</span></a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div>
+      <p class="eyebrow">Karachi &bull; Drinking-water delivery marketplace</p>
+      <h1>Clean drinking water,<br>ordered from home in 2 minutes.</h1>
+      <p class="lede">One website for all local water suppliers. Compare prices, pick a lab-tested supplier in your area, and get 19-litre bottles delivered to your doorstep — one-time or every week, automatically.</p>
+      <form class="area-search" id="areaForm">
+        <label for="areaSelect">Your area</label>
+        <select id="areaSelect">
+          <option value="All areas">All areas</option>
+          <option>FB Area</option>
+          <option>Gulshan</option>
+          <option>North Karachi</option>
+          <option>Gulistan-e-Jauhar</option>
+        </select>
+        <button type="submit">Find suppliers</button>
+      </form>
+      <p class="trust">✓ Lab-tested, certified suppliers only &nbsp;•&nbsp; ✓ Prices from Rs 130 to Rs 400 per bottle &nbsp;•&nbsp; ✓ Cash on delivery</p>
+      <div class="hero-stats">
+        <div><strong>12</strong><span>partner suppliers</span></div>
+        <div><strong>4</strong><span>launch areas</span></div>
+        <div><strong>4.6 ★</strong><span>average rating</span></div>
+        <div><strong>Rs 130–400</strong><span>per 19-litre bottle</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p class="hero-card-title">Today's example order</p>
+      <p class="big">1 bottle = <strong>Rs 250</strong></p>
+      <table>
+        <tr><td>Customer pays</td><td><strong>Rs 250</strong></td></tr>
+        <tr><td>Supplier receives</td><td>Rs 225</td></tr>
+        <tr><td>AquaLink earns (10%)</td><td>Rs 25</td></tr>
+      </table>
+      <p class="small">Transparent commission on every order. The supplier gets a new customer without spending on marketing — acquiring one customer on their own costs more than Rs 25.</p>
+    </div>
+  </section>
+
+  <!-- WHY AQUALINK -->
+  <section class="wrap why" id="why">
+    <h2>Why AquaLink</h2>
+    <p>Ordering water should be as easy as ordering food. Here is what makes AquaLink different.</p>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="feature-icon">✓</div>
+        <h3>Lab-tested water only</h3>
+        <p>Every supplier is certified and lab-tested. Two serious complaints and a supplier is removed from the platform.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">Rs</div>
+        <h3>Transparent prices</h3>
+        <p>Compare every supplier in your area side by side. No hidden charges — you always see the full price before ordering.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">◷</div>
+        <h3>On-time delivery</h3>
+        <p>Every supplier commits to a delivery window. Ratings punish late suppliers, and a backup supplier covers each area.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">↻</div>
+        <h3>Weekly subscriptions</h3>
+        <p>Set a weekly plan once and never run out of water. Pause, reschedule or cancel anytime — no lock-in.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SUPPLIERS -->
+  <section class="wrap" id="suppliers">
+    <div class="section-head">
+      <div>
+        <h2>Partner suppliers in your area</h2>
+        <p>Compare price and rating. Every supplier is lab-tested and certified — 2 serious complaints and a supplier is removed from the platform.</p>
+      </div>
+      <label class="sort">Sort by
+        <select id="sortSelect">
+          <option value="price">Lowest price</option>
+          <option value="rating">Highest rating</option>
+          <option value="delivery">Fastest delivery</option>
+        </select>
+      </label>
+    </div>
+    <div class="search-row">
+      <input type="search" id="searchInput" placeholder="Search supplier by name… e.g. AquaPure" aria-label="Search suppliers">
+    </div>
+    <div class="chips" id="areaChips">
+      <button data-area="All areas" class="active">All areas</button>
+      <button data-area="FB Area">FB Area</button>
+      <button data-area="Gulshan">Gulshan</button>
+      <button data-area="North Karachi">North Karachi</button>
+      <button data-area="Gulistan-e-Jauhar">Gulistan-e-Jauhar</button>
+    </div>
+    <div class="grid" id="supplierGrid"></div>
+    <p class="small" id="resultCount"></p>
+  </section>
+
+  <!-- PLANS -->
+  <section class="wrap plans" id="plans">
+    <h2>Subscription plans</h2>
+    <p>Set it once and never run out of water. Weekly recurring delivery, same supplier, same day — pause or cancel anytime.</p>
+    <div class="plan-grid">
+      <article class="plan-card">
+        <h3>Weekly Saver</h3>
+        <p class="plan-price">Rs 950 <small>/ month</small></p>
+        <p class="meta">4 × 19-litre bottles a month (1 per week)<br>Rs 1,000 value — you save Rs 50</p>
+        <p class="meta">✓ Same supplier every week<br>✓ Free rescheduling<br>✓ Pause anytime</p>
+        <button data-plan="Weekly Saver">Choose Weekly Saver</button>
+      </article>
+      <article class="plan-card featured">
+        <h3>Family Plan ⭐ Most popular</h3>
+        <p class="plan-price">Rs 1,800 <small>/ month</small></p>
+        <p class="meta">8 × 19-litre bottles a month (2 per week)<br>Rs 2,000 value — you save Rs 200</p>
+        <p class="meta">✓ Priority delivery window<br>✓ Same supplier every week<br>✓ Free rescheduling, pause anytime</p>
+        <button data-plan="Family Plan">Choose Family Plan</button>
+      </article>
+      <article class="plan-card">
+        <h3>Office Plan</h3>
+        <p class="plan-price">Rs 4,500 <small>/ month</small></p>
+        <p class="meta">20 × 19-litre bottles a month (5 per week)<br>Rs 5,000 value — you save Rs 500</p>
+        <p class="meta">✓ Dedicated supplier + backup supplier<br>✓ Monthly invoice<br>✓ Priority support on WhatsApp</p>
+        <button data-plan="Office Plan">Choose Office Plan</button>
+      </article>
+    </div>
+    <p class="small">Plan prices are based on the Rs 250 example bottle. Pick a plan and it fills the order form below as a weekly recurring delivery.</p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how wrap" id="how">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>1. Enter your area</strong><span>See every partner supplier serving your area, with prices and ratings.</span></li>
+      <li><strong>2. Compare &amp; order</strong><span>Order a 19-litre bottle in 2 minutes — once, or as a weekly recurring delivery.</span></li>
+      <li><strong>3. Supplier delivers</strong><span>Your order goes to the supplier instantly (dashboard + WhatsApp). Delivery in the promised window.</span></li>
+      <li><strong>4. Confirm &amp; rate</strong><span>Confirm delivery and rate the supplier. AquaLink keeps a 10% commission.</span></li>
+    </ol>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section class="wrap order-section" id="order">
+    <h2>Place your order</h2>
+    <p>Pick a supplier above, or fill this in directly. Pay cash on delivery — no advance payment needed.</p>
+    <form id="orderForm" class="order-form">
+      <label>Supplier
+        <select id="orderSupplier" required></select>
+      </label>
+      <label>19-litre bottles
+        <span class="qty">
+          <button type="button" id="qtyMinus" aria-label="Fewer bottles">−</button>
+          <input type="number" id="qty" value="2" min="1" max="20" required>
+          <button type="button" id="qtyPlus" aria-label="More bottles">+</button>
+        </span>
+      </label>
+      <label>Delivery
+        <select id="orderType">
+          <option value="One-time">One-time order</option>
+          <option value="Weekly recurring">Weekly recurring delivery</option>
+        </select>
+      </label>
+      <label>Delivery day
+        <select id="orderDay">
+          <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+          <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+        </select>
+      </label>
+      <label>Your name <input id="custName" type="text" placeholder="e.g. Ahmed Khan" required></label>
+      <label>Delivery address <input id="custAddress" type="text" placeholder="House, street, block, area" required></label>
+      <label>Phone / WhatsApp <input id="custPhone" type="tel" placeholder="03xx-xxxxxxx" required></label>
+      <div class="summary" id="orderSummary"></div>
+      <button class="cta" type="submit">Place order</button>
+      <p class="small">First order: Rs 50 off (launch offer) — applied automatically to your first order. Refer a friend who orders and get Rs 100 wallet credit.</p>
+    </form>
+    <div class="confirm" id="confirmBox" hidden></div>
+  </section>
+
+  <!-- MY ORDERS -->
+  <section class="wrap" id="orders">
+    <h2>My orders</h2>
+    <p class="small">Track your orders here. Your supplier updates the status as your order moves — accepted, on the way, delivered.</p>
+    <div id="orderList"><p class="small">No orders yet — place your first order above.</p></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="wrap faq" id="faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Is the water safe to drink?</summary>
+      <p>Yes. We only onboard lab-tested, certified suppliers, and a supplier is removed after 2 serious complaints.</p>
+    </details>
+    <details>
+      <summary>What if my delivery is late?</summary>
+      <p>Every supplier has a promised delivery window. Late deliveries hurt the supplier's rating, and there is a backup supplier in each area.</p>
+    </details>
+    <details>
+      <summary>How do I pay?</summary>
+      <p>Cash on delivery, or online transfer. The order summary always shows the full split: what the supplier receives and AquaLink's 10% commission.</p>
+    </details>
+    <details>
+      <summary>Can I change or cancel my order?</summary>
+      <p>Yes — cancel from My orders any time before the order is out for delivery. Weekly plans can be paused or cancelled anytime.</p>
+    </details>
+    <details>
+      <summary>Which areas do you serve?</summary>
+      <p>FB Area, Gulshan, North Karachi and Gulistan-e-Jauhar at launch — about 50,000 households buying bottled water. More areas open as new suppliers join.</p>
+    </details>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="wrap founder" id="founder">
+    <div class="founder-card">
+      <div class="avatar">ZS</div>
+      <div>
+        <h2>About the founder</h2>
+        <p><strong>Zafarullah Shah</strong> — Founder &amp; Developer, AquaLink Filtration</p>
+        <p>Roll No. 24BS(IT)128 &nbsp;•&nbsp; 6th Semester, Information Technology<br>
+        Shaheed Benazir Bhutto University, Shaheed Benazirabad</p>
+        <p class="small">AquaLink started as a final-year entrepreneurship project: a marketplace that gives Karachi's small water suppliers an online shop, and gives households a fair price with a single tap. The website, the business model and the year-1 plan were built from the ground up by the founder.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="wrap contact" id="contact">
+    <h2>Contact us</h2>
+    <p>Questions, a complaint about a supplier, or want to list your water company on AquaLink? Send a message and we will get back to you.</p>
+    <div class="contact-grid">
+      <form id="contactForm" class="contact-form">
+        <label>Your name <input id="contactName" type="text" placeholder="Your name" required></label>
+        <label>Phone / WhatsApp <input id="contactPhone" type="tel" placeholder="03xx-xxxxxxx" required></label>
+        <label>Message <textarea id="contactMsg" rows="4" placeholder="Write your question or complaint…" required></textarea></label>
+        <button class="cta" type="submit">Send message</button>
+      </form>
+      <div class="contact-info">
+        <h3>Reach us directly</h3>
+        <p><strong>Email</strong><br><a href="mailto:shahzfaar@gmail.com">shahzfaar@gmail.com</a></p>
+        <p><strong>Service areas</strong><br>FB Area, Gulshan, North Karachi, Gulistan-e-Jauhar — Karachi</p>
+        <p><strong>Hours</strong><br>Monday – Sunday, 9:00 AM – 9:00 PM</p>
+        <p class="small">Founder: Zafarullah Shah (24BS(IT)128), Shaheed Benazir Bhutto University.</p>
+      </div>
+    </div>
+    <div class="confirm" id="contactConfirm" hidden></div>
+  </section>
+
+  <!-- PLAN -->
+  <section class="wrap plan">
+    <h2>The plan behind AquaLink</h2>
+    <div class="stats">
+      <div><strong>20</strong><span>partner companies by end of year 1</span></div>
+      <div><strong>3,000</strong><span>bottles a month by month 12</span></div>
+      <div><strong>Rs 502,500</strong><span>year-1 revenue (10% commission)</span></div>
+      <div><strong>~5 months</strong><span>to break even (≈ 2,500 bottles)</span></div>
+    </div>
+    <p class="small">Startup cost ≈ Rs 19,500 (domain, hosting, flyers, transport). Year-1 profit ≈ Rs 436,500 (≈ 87% margin). Launch areas: FB Area, Gulshan, North Karachi, Gulistan-e-Jauhar — about 50,000 households buying bottled water.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">💧 AquaLink <span>Filtration</span></p>
+      <p class="small">Clean drinking water, ordered from home. One website for all local water suppliers in Karachi.</p>
+    </div>
+    <div>
+      <p><strong>Explore</strong></p>
+      <p class="small"><a href="#suppliers">Suppliers</a><br><a href="#plans">Subscription plans</a><br><a href="#how">How it works</a><br><a href="#faq">FAQ</a></p>
+    </div>
+    <div>
+      <p><strong>Contact</strong></p>
+      <p class="small"><a href="mailto:shahzfaar@gmail.com">shahzfaar@gmail.com</a><br>Karachi, Pakistan<br>Mon–Sun, 9:00 AM – 9:00 PM</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p class="small">© 2026 AquaLink Filtration — Founded by Zafarullah Shah, Roll No. 24BS(IT)128, Shaheed Benazir Bhutto University, Shaheed Benazirabad. Entrepreneurship Project.</p>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
